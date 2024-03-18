@@ -13,6 +13,7 @@
 import type {RootTag} from '../Types/RootTagTypes';
 import type {UIManagerJSInterface} from '../Types/UIManagerJSInterface';
 
+import NativeDOM from '../../src/private/webapis/dom/nodes/specs/NativeDOM';
 import {unstable_hasComponent} from '../NativeComponent/NativeComponentRegistryUnstable';
 import defineLazyObjectProperty from '../Utilities/defineLazyObjectProperty';
 import Platform from '../Utilities/Platform';
@@ -397,7 +398,7 @@ const UIManagerJS: UIManagerJSInterface & {[string]: any} = {
     // Keep this in sync with ReadOnlyNode.js
     const DOCUMENT_POSITION_CONTAINED_BY = 16;
 
-    let result = FabricUIManager.compareDocumentPosition(
+    let result = NativeDOM.compareDocumentPosition(
       ancestorShadowNode,
       shadowNode,
     );
